@@ -18,11 +18,11 @@ if dein#load_state('~/.cache/dein')
 	call dein#add('scrooloose/nerdtree')
 	call dein#add('scrooloose/nerdcommenter')
 	call dein#add('w0rp/ale')
-	call dein#add('airblade/vim-rooter')
+	"call dein#add('airblade/vim-rooter')
 	call dein#add('tpope/vim-sensible')
 	call dein#add('vim-airline/vim-airline')
 	call dein#add('vim-airline/vim-airline-themes')
-	call dein#add('yuttie/comfortable-motion.vim')
+"	call dein#add('yuttie/comfortable-motion.vim')
 	
 	" Autocompletion
 	call dein#add('ncm2/ncm2')
@@ -60,8 +60,15 @@ set shiftwidth=4
 set cursorline
 set autoread
 set ruler
+" Set the line numbers on the left
 set number relativenumber
 set nu rnu
+" Auto word wrap to 100 characters
+set textwidth=100
+set colorcolumn=100
+set formatoptions+=t
+au BufRead,BufNewFile *.md setlocal textwidth=100 " For MD files, auto-wrap
+au BufRead,BufNewFile *.MD setlocal textwidth=100 " For MD files, auto-wrap
 
 command WQ wq
 command Wq wq

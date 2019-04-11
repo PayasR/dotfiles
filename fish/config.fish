@@ -79,8 +79,8 @@ function fish_greeting
 		echo
 	end
 
-	set_color normal
-	echo -e " \e[1mTODOs\e[0;32m"
+	set_color red 
+	echo -e " \e[1mDo these or everything catches fire:\e[0;32m"
 	echo
 	if [ $r -lt 10 ]
 		# unimportant, so show rarely
