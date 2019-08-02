@@ -22,8 +22,8 @@ if dein#load_state('~/.cache/dein')
 	call dein#add('tpope/vim-sensible')
 	call dein#add('vim-airline/vim-airline')
 	call dein#add('vim-airline/vim-airline-themes')
-"	call dein#add('yuttie/comfortable-motion.vim')
-	
+	call dein#add('morhetz/gruvbox')
+
 	" Autocompletion
 	call dein#add('ncm2/ncm2')
 	call dein#add('roxma/nvim-yarp')
@@ -44,6 +44,8 @@ if dein#load_state('~/.cache/dein')
 	call dein#save_state()
 endif
 
+set background=dark
+set t_Co=256
 filetype plugin indent on
 syntax enable
 
@@ -83,10 +85,12 @@ let g:airline_theme='minimalist'
 "let g:deoplete#enable_at_startup = 1
 "let g:LanguageClient_autoStart = 1
 " let g:LanguageClient_serverCommands = {
-    \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
-	\ }
+"    \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
+"	\ }
 
 " Use ncm2
+let g:python_host_prog = "/usr/bin/python"
+let g:python3_host_prog = "/usr/bin/python3"
 autocmd BufEnter * call ncm2#enable_for_buffer()
 set completeopt=noinsert,menuone,noselect
 " tab to select
