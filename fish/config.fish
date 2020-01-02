@@ -6,9 +6,9 @@ abbr vim="nvim"
 abbr vi="nvim"
 
 # Environment variables
-set fish_user_paths /usr/lib64/qt-3.3/bin /home/praja002/perl5/bin /home/praja002/.cargo/bin 
-set fish_user_paths $fish_user_paths /home/praja002/Projects/go/bin /usr/local/bin /usr/bin /usr/sbin
-set fish_user_paths $fish_user_paths /home/praja002/.local/bin /home/praja002/.fzf/bin
+set fish_user_paths /home/praja002/.cargo/bin 
+#set fish_user_paths $fish_user_paths /home/praja002/Projects/go/bin /usr/local/bin /usr/bin /usr/sbin
+#set fish_user_paths $fish_user_paths /home/praja002/.local/bin /home/praja002/.fzf/bin
 
 abbr -a yr 'cal -y'
 abbr -a c cargo
@@ -45,4 +45,12 @@ function fish_greeting
 	set_color normal
 end
 
-set LD_LIBRARY_PATH $LD_LIBRARY_PATH /home/praja002/gcc-8.1.0/lib64/ /usr/local/lib/ /usr/local/lib64/
+# Base16 Shell
+if status --is-interactive
+	set BASE16_SHELL "$HOME/.config/base16-shell/"
+	source "$BASE16_SHELL/profile_helper.fish"
+end
+
+set -x LD_LIBRARY_PATH /usr/local/lib/:/usr/local/lib64/
+set CC /usr/local/bin/gcc
+set CXX /usr/local/bin/g++
